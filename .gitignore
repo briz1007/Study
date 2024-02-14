@@ -46,6 +46,8 @@ x64/
 *.json
 *.csproj
 *.sln
+*.config
+*.editorconfig
 
 # Visual C++ cache files
 ipch/
