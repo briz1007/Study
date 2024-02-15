@@ -7,7 +7,7 @@ public class Program
     public static void Main(string[] args)
     {        
         CreateWebHostBuilder(args).Build().Run();
-        //git changes
+        //git changes by remote
     }
 
     public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
