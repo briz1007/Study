@@ -10,6 +10,7 @@ public class Program
 
         
         CreateWebHostBuilder(args).Build().Run();
+        //git changes
     }
 
     public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
