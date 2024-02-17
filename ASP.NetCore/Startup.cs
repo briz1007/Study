@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -32,6 +33,11 @@ namespace Asp.NetCore
         {
             if (env.IsDevelopment())
             {
+                //DeveloperExceptionPageOptions developerExceptionPageOptions = new DeveloperExceptionPageOptions
+                //{
+                //    SourceCodeLineCount = 10
+                //};
+                //app.UseDeveloperExceptionPage(developerExceptionPageOptions);
                 app.UseDeveloperExceptionPage();
             }
             //else
@@ -41,6 +47,18 @@ namespace Asp.NetCore
             //}
 
             //app.UseHttpsRedirection();
+            //DefaultFilesOptions defaultFilesOptions = new DefaultFilesOptions();
+            //defaultFilesOptions.DefaultFileNames.Clear();
+            //defaultFilesOptions.DefaultFileNames.Add("index.html");
+            //app.UseDefaultFiles(defaultFilesOptions);
+            //app.UseStaticFiles();
+
+            //FileServerOptions fileServerOptions = new FileServerOptions();
+            //fileServerOptions.DefaultFilesOptions.DefaultFileNames.Clear();
+            //fileServerOptions.DefaultFilesOptions.DefaultFileNames.Add("index.html");
+            //app.UseFileServer(fileServerOptions);
+
+            //app.UseFileServer();
             //app.UseStaticFiles();
 
             //app.UseRouting();
@@ -55,7 +73,9 @@ namespace Asp.NetCore
             //});
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync(System.Diagnostics.Process.GetCurrentProcess().ProcessName);
+                //throw new Exception("Some error processing the request");
+                //await context.Response.WriteAsync(Configuration["MyKey"]);
+                await context.Response.WriteAsync("Hosting environment:" + env.EnvironmentName);
             });
             
         }
